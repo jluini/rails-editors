@@ -3,5 +3,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   
-  get '/editor', to: 'editor#index'
+  get '/editorjs-test', to: 'editorjs#test'
+  get '/editorjs-showroom', to: 'editorjs#showroom'
 end
