@@ -1,5 +1,8 @@
 import EditorJS from '@editorjs/editorjs';
+
+// EditorJS tools or plugins
 import Header from '@editorjs/header';
+import List from '@editorjs/list';
 
 class EditorJSWrapper {
   constructor(holderId, options) {
@@ -13,6 +16,10 @@ class EditorJSWrapper {
        */
       tools: {
         header: Header,
+        list: {
+          class: List,
+          inlineToolbar: true,
+        },
       },
       
       /**
@@ -44,6 +51,7 @@ class EditorJSWrapper {
             "Bold": "Negrita",
             "Italic": "Cursiva",
             "Heading": "Título",
+            "List": "Lista",
           },
           tools: {
             "link": {
@@ -53,6 +61,10 @@ class EditorJSWrapper {
               "The block can not be displayed correctly.": "El bloque no puede mostrarse (no se reconoce su tipo)"
             },
             "header": {},
+            "list": {
+              "Ordered": "Con números",
+              "Unordered": "Con viñetas"
+            }
           },
           blockTunes: {
             "delete": {
