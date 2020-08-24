@@ -7,8 +7,9 @@ export default class ExternalImage {
     };
   }
   
-  constructor({data}) {
+  constructor({data, api}) {
     this.data = data;
+    this.api = api;
     this.wrapper = undefined;
   }
   
@@ -19,7 +20,7 @@ export default class ExternalImage {
     this.wrapper.classList.add('external-image');
     this.wrapper.appendChild(input);
     
-    input.placeholder = 'Paste an image URL...';
+    input.placeholder = this.api.i18n.t('Paste an image URL...');
     input.value = this.data && this.data.url ? this.data.url : '';
     
     input.addEventListener('paste', (event) => {

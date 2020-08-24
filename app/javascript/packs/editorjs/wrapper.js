@@ -71,7 +71,10 @@ class EditorJSWrapper {
             "list": {
               "Ordered": "Con números",
               "Unordered": "Con viñetas"
-            }
+            },
+            "external_image": {
+              "Paste an image URL...": "Pegue la URL de una imagen..."
+            },
           },
           blockTunes: {
             "delete": {
