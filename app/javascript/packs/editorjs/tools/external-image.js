@@ -14,8 +14,10 @@ export default class ExternalImage {
   }
   
   render() {
-    this.wrapper = document.createElement('div');
     const input = document.createElement('input');
+    input.classList.add('cdx-input');
+    
+    this.wrapper = document.createElement('div');
     
     this.wrapper.classList.add('external-image');
     this.wrapper.appendChild(input);
@@ -23,15 +25,7 @@ export default class ExternalImage {
     input.placeholder = this.api.i18n.t('Paste an image URL...');
     input.value = this.data && this.data.url ? this.data.url : '';
     
-    input.addEventListener('paste', (event) => {
-      this._createImage(event.clipboardData.getData('text'));
-    });
-    
     return this.wrapper;
-  }
-  
-  _createImage(url) {
-    console.log("Pasted:", url);
   }
   
   save(blockContent) {
