@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+.columns {
+  height: 100%;
+}
+
+.column {
+  float: left;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1em;
+}
+.input-column  { background-color: #eeeeee; width: 30%; }
+.editor-column { background-color: #cfcfcf; width: 40%; }
+.html-column   { background-color: #eeeeee; width: 30%; }
+
+.column-title {
+  text-align: center;
+}
+
+.template-list {
+  text-align: center;
+}
+
+#code-area {
+  background-color: #0000001c;
+  width: 100%;
+  position: relative;
+  height: 500px;
+  bottom: 0;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: scroll;
+}
+
+#editor-container {
+  background-color: white;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+#result-container {
+  background-color: #0000001c;
+  padding: 1em;
+  border-radius: 2em;
+  margin-top: 30px;
+}
+.result-placeholder {
+  color: gray;
+  text-align: center;
+}
+
+.arrow-button {
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+  width: 60px;
+  height: 30px;
+  
+  background-image: url(image-path('arrow.png'));
+  background-size: 56px 26px;
+  background-repeat: no-repeat;
+}
+.raw-to-editor {
+  top: 8px;
+  transform: translateX(-30px);
+}
+.editor-to-raw {
+  top: 42px;
+  transform: rotate(180deg) translateX(30px);
+}
+
+.refresh-button {
+  position: absolute;
+  top: 20px;
+  left: 70%;
+  width: 50px;
+  height: 50px;
+  
+  background-image: url(image-path('refresh.png'));
+  background-size: 46px 46px;
+  background-repeat: no-repeat;
+  
+  transform: translateX(20px);
+}

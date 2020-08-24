@@ -10,6 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ ***
+ *
+ * We include every file under the 'global' subfolder (not in this folder like rails default).
+ *
+ *= require_tree ./global
  *= require_self
  */

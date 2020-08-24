@@ -3,16 +3,22 @@ import EditorJS from '@editorjs/editorjs';
 // EditorJS tools or plugins
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
+import ExternalImage from './tools/external-image';
+
+import DocumentRenderer from './renderer'
 
 class EditorJSWrapper {
   constructor(holderId, options) {
     this.holderId = holderId;
+    
+    this.renderer = new DocumentRenderer();
+    
     this.editor = new EditorJS({
       holder: holderId,
       autofocus: true,
       
       /**
-       * Tools list
+       * Tools list.
        */
       tools: {
         header: Header,
@@ -20,6 +26,7 @@ class EditorJSWrapper {
           class: List,
           inlineToolbar: true,
         },
+        external_image: ExternalImage,
       },
       
       /**
@@ -85,6 +92,24 @@ class EditorJSWrapper {
        */
       ...options
     });
+  }
+  
+  render(content) {
+    this.editor.render(content);
+  }
+  
+  getEditorData(callback) {
+    return this.editor.save().then((outputData) => {
+      callback(outputData);
+    }).catch((error) => {
+      callback({error});
+    });
+  }
+  
+  renderHtml(data) {
+    return {
+      html: this.renderer.blocksToHtml(data.blocks)
+    };
   }
 }
 

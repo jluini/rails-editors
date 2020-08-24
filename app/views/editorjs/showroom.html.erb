@@ -1,5 +1,35 @@
-<h1>Showroom</h1>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'editorjs-showroom', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
 
-<div id="editor-container"></div>
+<div class="columns">
+  <button class="arrow-button raw-to-editor" onclick="setEditorData()"></button>
+  <button class="arrow-button editor-to-raw" onclick="showEditorData()"></button>
+  <button class="refresh-button"></button>
+  <div class="column input-column">
+    <h1 class="column-title">Plantillas</h1>
+    <div class="template-list">
+      <button data-document-sample="empty">En blanco</button>
+      <button data-document-sample="sample1">Muestra</button>
+      <button data-document-sample="sample2">Con imagen</button>
+    </div>
+    
+    <h1 class="column-title">Contenido crudo</h1>
+    <div>
+      <textarea id="code-area"></textarea>
+    </div>
+  </div>
+  <div class="column editor-column">
+    <h1 class="column-title">Editor</h1>
+    
+    <div id="editor-container"></div>
+  </div>
+  <div class="column html-column">
+    <h1 class="column-title">Resultado</h1>
+    <div id="result-container">
+      <div class="result-placeholder">Escriba algo en el editor...</div>
+    </div>
+  </div>
+</div>
 
 <%= javascript_pack_tag 'editorjs-showroom' %>
