@@ -24,6 +24,9 @@ const blockRenderers = {
   external_image(data) {
     return `<img src="${data.url}" />`;
   },
+  image(data) {
+    return `<img src="${data.file.url || ''}" />`;
+  }
 };
 
 function blockToHtml(block) {

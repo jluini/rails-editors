@@ -817,6 +817,11 @@
   resolved "https://registry.yarnpkg.com/@editorjs/header/-/header-2.5.0.tgz#f6266d5b7e639fc38289291160f9c41ab12d9da5"
   integrity sha512-7j8g5/pjb7WtzjpANai/BoUK4QnZdNLt6Q4YRWL8xfLfUtN2M6zEfV11TuEh/l6eZlO0f/5vkXDFXDsbfeJfDA==
 
+"@editorjs/image@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/image/-/image-2.5.0.tgz#6a7fcd234d0e85479bf28112a3a35288748a7803"
+  integrity sha512-G03VvqydsU/E0REOMEE2zXql5R48jIRZdXrrR4EdPwOsWAYLrzwgudSOB815YBct9ln7/o6/je0+wjuXEencgA==
+
 "@editorjs/list@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@editorjs/list/-/list-1.5.0.tgz#8675c82caa25f50744a4b072a7911163ce26bd74"

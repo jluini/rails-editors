@@ -3,6 +3,7 @@ import EditorJS from '@editorjs/editorjs';
 // EditorJS tools or plugins
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
+import ImageTool from '@editorjs/image';
 import ExternalImage from './tools/external-image';
 
 import DocumentRenderer from './renderer'
@@ -25,6 +26,18 @@ class EditorJSWrapper {
         list: {
           class: List,
           inlineToolbar: true,
+        },
+        image: {
+          class: ImageTool,
+          config: {
+            endpoints: {
+              byFile: 'uploadFile',
+              byUrl: 'fetchUrl',
+            },
+            additionalRequestHeaders: {
+              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+          }
         },
         external_image: ExternalImage,
       },
@@ -59,6 +72,8 @@ class EditorJSWrapper {
             "Italic": "Cursiva",
             "Heading": "Título",
             "List": "Lista",
+            "External image": "Imagen externa",
+            "Image": "Imagen",
           },
           tools: {
             "link": {
@@ -75,6 +90,14 @@ class EditorJSWrapper {
             "external_image": {
               "Paste an image URL...": "Pegue la URL de una imagen..."
             },
+            "image": {
+              "Caption": "Escriba una leyenda...",
+              "Select an Image": "Cargue una imagen (o arrástrela aquí)",
+              "Couldn’t upload image. Please try another.": "No se pudo cargar la imagen. Pruebe con otra.",
+              "With border": "Con borde",
+              "Stretch image": "Expandir",
+              "With background": "Con fondo",
+            }
           },
           blockTunes: {
             "delete": {
