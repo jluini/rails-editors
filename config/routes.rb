@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   
   # TinyMCE
   get '/tiny-mce/test', to: 'tiny_mce#test', as: 'tinymce_test'
+  
+  # Tiptap
+  get 'tiptap/test', to: 'tiptap#test', as: 'tiptap_test'
 end
