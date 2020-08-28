@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   get '/tiny-mce/test', to: 'tiny_mce#test', as: 'tinymce_test'
   
   # Tiptap
-  get 'tiptap/test', to: 'tiptap#test', as: 'tiptap_test'
+  get '/tiptap/test', to: 'tiptap#test', as: 'tiptap_test'
+  
+  # GrapeJS
+  get '/grapejs/test', to: 'grapejs#test', as: 'grapejs_test'
 end
