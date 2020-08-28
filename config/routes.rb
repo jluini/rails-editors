@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   # Tiptap
   get '/tiptap/test', to: 'tiptap#test', as: 'tiptap_test'
   
-  # GrapeJS
-  get '/grapejs/test', to: 'grapejs#test', as: 'grapejs_test'
+  # GrapesJS
+  get '/grapesjs/test', to: 'grapesjs#test', as: 'grapesjs_test'
 end
