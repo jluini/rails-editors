@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'grapesjs-test', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<h1>GrapesJS test2 (from html string)</h1>
+
+<div id="gjs">
+  <h1>Esto se borra?</h1>
+</div>
+
+<%= javascript_pack_tag 'grapesjs-test2' %>
