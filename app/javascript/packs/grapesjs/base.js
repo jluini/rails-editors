@@ -7,6 +7,7 @@ import 'grapesjs/dist/css/grapes.min.css';
  * 
  * Optional:
  *  - htmlContent: starting content (use dom content if not specified)
+ *  - layerManager: selector of the dom element where to show the layer manager
  *  - height (default: '600px')
  *  - width (default: 'auto')
  */
@@ -14,11 +15,37 @@ import 'grapesjs/dist/css/grapes.min.css';
 export default function createEditor(options) {
   const editorConfig = {
     container: options.containerId,
-    height: options.height || '600px',
+    height: options.height || '100%',
     width: options.width || 'auto',
     storageManager: false,
-    panels: { defaults: [] },
   };
+  
+  const defaultPanels = [];
+  
+  if(options.layerManager) {
+    editorConfig.layerManager = {
+      appendTo: options.layerManager
+    };
+    
+    defaultPanels.push({
+      id: 'layers',
+      el: '.panel__right',
+      // Make the panel resizable
+      resizable: {
+        maxDim: 350,
+        minDim: 200,
+        tc: 0, // Top handler
+        cl: 1, // Left handler
+        cr: 0, // Right handler
+        bc: 0, // Bottom handler
+        // Being a flex child we need to change `flex-basis` property
+        // instead of the `width` (default)
+        keyWidth: 'flex-basis',
+      },
+    });
+  }
+  
+  editorConfig.panels = { defaults: defaultPanels };
   
   if(options.htmlContent) {
     editorConfig.components = options.htmlContent;
