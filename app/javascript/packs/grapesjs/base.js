@@ -17,7 +17,16 @@ export default function createEditor(options) {
     container: options.containerId,
     height: options.height || '100%',
     width: options.width || 'auto',
-    storageManager: false,
+    storageManager: {
+      id: 'gjs-',
+      type: 'remote',
+      autosave: false,
+      stepsBeforeSave: 1,
+      autoload: false,
+      urlStore: '/grapesjs/store',
+      urlLoad: '/grapesjs/load',
+      headers: { 'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content') },
+    },
   };
   
   const defaultPanels = [];
@@ -93,7 +102,17 @@ function addButtons(editor) {
             </textarea>`)
             .open();
         },
-      }
+      }, {
+        id: 'store',
+        className: 'btn-store',
+        label: 'Save',
+        context: 'store',
+        command(editor) {
+          editor.store(res => {
+            console.log('Store callback:', res);
+          });
+        },
+      },
     ],
   });
 }

@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get '/grapesjs/test', to: 'grapesjs#test', as: 'grapesjs_test'
   get '/grapesjs/test2', to: 'grapesjs#test2', as: 'grapesjs_test2'
   get '/grapesjs/test3', to: 'grapesjs#test3', as: 'grapesjs_test3'
+  
+  post '/grapesjs/store', to: 'grapesjs#store'
+  
 end
