@@ -39,6 +39,24 @@ class GrapesjsController < ApplicationController
     @documents = Document.all
   end
   
+  def new
+    new_document = Document.new(
+      {
+        'html' => '<div>Insert content here</div>',
+        'components' => '[{"type":"text","content":"Insert content here","open":false}]',
+        'css' => '* { box-sizing: border-box; } body {margin: 0;}',
+        'style' => '[]',
+        'assets' => '[]'
+      }
+    )
+    
+    if new_document.save
+      redirect_to action: 'edit', id: new_document.id
+    else
+      render plain: 'Error!'
+    end
+  end
+  
   def edit
     # this is actually pretty useless
     # (only showing id in view, the content is loaded asynchronously)
