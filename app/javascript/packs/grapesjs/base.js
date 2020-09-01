@@ -21,9 +21,9 @@ export default function createEditor(options) {
       id: 'gjs-',
       type: 'remote',
       autosave: false,
-      autoload: false,
-      urlStore: '/grapesjs/store',
-      urlLoad: '/grapesjs/load',
+      autoload: options.autoload || false,
+      urlStore: 'store',
+      urlLoad: 'load',
       headers: { 'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content') },
     },
   };
