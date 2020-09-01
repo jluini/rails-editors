@@ -1,0 +1,14 @@
+<h1>All documents</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Edit</th>
+  </tr>
+  <% @documents.each do |document| %>
+    <tr>
+      <td><%= document.id %></td>
+      <td><%= link_to 'Edit', edit_document_path(document) %></td>
+    </tr>
+  <% end %>
+</table>

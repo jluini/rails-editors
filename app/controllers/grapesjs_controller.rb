@@ -35,6 +35,10 @@ class GrapesjsController < ApplicationController
     render json: { data: 'ok' }
   end
   
+  def index
+    @documents = Document.all
+  end
+  
   def edit
     # this is actually pretty useless
     # (only showing id in view, the content is loaded asynchronously)
