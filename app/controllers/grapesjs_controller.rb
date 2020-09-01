@@ -63,6 +63,13 @@ class GrapesjsController < ApplicationController
     @document = Document.find(params[:id])
   end
   
+  def destroy
+    @node = Document.find(params[:id])
+    @node.destroy
+    
+    redirect_to documents_path
+  end
+  
   def load
     @document = Document.find(params[:id])
     
