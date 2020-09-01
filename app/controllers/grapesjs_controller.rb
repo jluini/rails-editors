@@ -21,7 +21,7 @@ class GrapesjsController < ApplicationController
     puts
     puts 'Style'
     puts '-----'
-    puts params['gjs-style']
+    puts params['gjs-styles']
     puts
     
     response = { data: 'ok' }
