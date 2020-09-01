@@ -21,7 +21,6 @@ export default function createEditor(options) {
       id: 'gjs-',
       type: 'remote',
       autosave: false,
-      stepsBeforeSave: 1,
       autoload: false,
       urlStore: '/grapesjs/store',
       urlLoad: '/grapesjs/load',
