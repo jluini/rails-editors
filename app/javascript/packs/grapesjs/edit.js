@@ -5,3 +5,11 @@ const editor = createEditor({
   layerManager: '.layers-container',
   autoload: true
 });
+
+document.getElementById('gjs-input-button').onclick = function(event) {
+  const importSource = document.getElementById('gjs-raw-input');
+  const code = importSource.value;
+  
+  editor.DomComponents.getWrapper().set('content', '');
+  editor.setComponents(code);
+};
