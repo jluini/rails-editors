@@ -108,10 +108,17 @@ function addButtons(editor) {
         context: 'store',
         command(editor) {
           editor.store(res => {
-            console.log('Store callback:', res);
+            if(typeof(res) == 'object' && res.data && res.data == 'ok') {
+              alert('Saved OK');
+            } else {
+              alert('Could not save');
+            }
           });
         },
       },
     ],
+  });
+  editor.on('storage:error', (err) => {
+    alert(`Could not save. Error is:\n\n${err}`);
   });
 }
