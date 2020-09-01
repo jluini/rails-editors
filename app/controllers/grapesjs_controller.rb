@@ -40,21 +40,13 @@ class GrapesjsController < ApplicationController
   end
   
   def new
-    new_document = Document.new(
-      {
-        'html' => '<div>Insert content here</div>',
-        'components' => '[{"type":"text","content":"Insert content here","open":false}]',
-        'css' => '* { box-sizing: border-box; } body {margin: 0;}',
-        'style' => '[]',
-        'assets' => '[]'
-      }
-    )
+    create_new_document nil
+  end
+  
+  def clone
+    @document = Document.find(params[:id])
     
-    if new_document.save
-      redirect_to action: 'edit', id: new_document.id
-    else
-      render plain: 'Error!'
-    end
+    create_new_document(@document)
   end
   
   def edit
@@ -93,5 +85,23 @@ class GrapesjsController < ApplicationController
     @document.save!
     
     render json: { data: 'ok' }
+  end
+  
+  private
+  
+  def create_new_document(template)
+    new_document = Document.new
+    
+    new_document.html       = template ? template.html       : '<div>Insert content here</div>'
+    new_document.components = template ? template.components : '[{"type":"text","content":"Insert content here","open":false}]'
+    new_document.css        = template ? template.css        : '* { box-sizing: border-box; } body {margin: 0;}'
+    new_document.style      = template ? template.style      : '[]'
+    new_document.assets     = template ? template.assets     : '[]'
+    
+    if new_document.save
+      redirect_to action: 'edit', id: new_document.id
+    else
+      render plain: 'Error!'
+    end
   end
 end

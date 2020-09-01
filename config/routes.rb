@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   
   get '/grapesjs/documents', to: 'grapesjs#index', as: 'documents'
   get '/grapesjs/documents/new', to: 'grapesjs#new', as: 'new_document'
+  get '/grapesjs/documents/:id/clone', to: 'grapesjs#clone', as: 'clone_document'
   get '/grapesjs/documents/:id/edit', to: 'grapesjs#edit', as: 'edit_document'
   delete '/grapesjs/documents/:id', to: 'grapesjs#destroy', as: 'destroy_document'
   get '/grapesjs/documents/:id/load', to: 'grapesjs#load', as: 'load_document'
