@@ -81,18 +81,18 @@ function addButtons(editor) {
         id: 'visibility',
         active: true, // active by default
         className: 'btn-toggle-borders',
-        label: '<u>B</u>',
+        label: '<u>Bordes</u>',
         command: 'sw-visibility', // Built-in command
       }, {
         id: 'export',
         className: 'btn-open-export',
-        label: 'Exp',
+        label: 'Ver html/css',
         command: 'export-template',
         context: 'export-template', // For grouping context of buttons from the same panel
       }, {
         id: 'show-json',
         className: 'btn-show-json',
-        label: 'JSON',
+        label: 'Ver json',
         context: 'show-json',
         command(editor) {
           editor.Modal.setTitle('Components JSON')
@@ -104,14 +104,14 @@ function addButtons(editor) {
       }, {
         id: 'store',
         className: 'btn-store',
-        label: 'Save',
+        label: 'Guardar',
         context: 'store',
         command(editor) {
           editor.store(res => {
             if(typeof(res) == 'object' && res.data && res.data == 'ok') {
-              alert('Saved OK');
+              alert('¡Guardado!');
             } else {
-              alert('Could not save');
+              alert('No se pudo guardar :(');
             }
           });
         },
@@ -119,6 +119,6 @@ function addButtons(editor) {
     ],
   });
   editor.on('storage:error', (err) => {
-    alert(`Could not save. Error is:\n\n${err}`);
+    alert(`No se pudo guardar. El error es:\n\n${err}`);
   });
 }

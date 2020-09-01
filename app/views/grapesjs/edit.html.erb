@@ -2,7 +2,13 @@
   <%= stylesheet_link_tag 'grapesjs-test', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% end %>
 
-<h1>Edit document<span style="color: blue;">#<%= @document.id %></span></h1>
+<ul>
+  <li><%= link_to '<-- Volver al listado', documents_path %></li>
+  <li><%= link_to 'Clonar', clone_document_path(@document) %></li>
+  <li><%= link_to 'Eliminar', destroy_document_path(@document), method: :delete, data: { confirm: '¿Estás seguro/a?' } %></li>
+</ul>
+
+<h1>Editar documento<span style="color: blue;">#<%= @document.id %></span></h1>
 
 <div class="editor-container">
   <div class="panel__top">
@@ -11,7 +17,7 @@
   <div class="editor-row">
     <div class="editor-canvas">
       <div id="gjs">
-        <h1>This should be overriden</h1>
+        <h1>Cargando...</h1>
       </div>
     </div>
     <div class="panel__right">
@@ -20,9 +26,9 @@
   </div>
 </div>
 
-<h1>Paste here html to import:</h1>
+<h1>Pegar html a importar:</h1>
 
 <textarea id="gjs-raw-input"></textarea>
-<button id="gjs-input-button">Import</button>
+<button id="gjs-input-button">Importar</button>
 
 <%= javascript_pack_tag 'grapesjs/edit' %>

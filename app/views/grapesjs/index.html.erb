@@ -1,22 +1,22 @@
-<h1>All documents</h1>
+<h1>Todos los documentos</h1>
 
 <table>
   <tr>
     <th>Id</th>
-    <th>Edit</th>
-    <th>Clone</th>
-    <th>Remove</th>
+    <th>Editar</th>
+    <th>Clonar</th>
+    <th>Eliminar</th>
   </tr>
   <% @documents.each do |document| %>
     <tr>
       <td><%= document.id %></td>
-      <td><%= link_to 'Edit', edit_document_path(document) %></td>
-      <td><%= link_to 'Clone', clone_document_path(document) %></td>
-      <td><%= link_to 'Remove', destroy_document_path(document), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Editar', edit_document_path(document) %></td>
+      <td><%= link_to 'Clonar', clone_document_path(document) %></td>
+      <td><%= link_to 'Eliminar', destroy_document_path(document), method: :delete, data: { confirm: '¿Estás seguro/a?' } %></td>
     </tr>
   <% end %>
 </table>
 
 <br>
 
-<%= link_to 'Create new document', new_document_path %>
+<%= link_to 'Crear nuevo documento', new_document_path %>

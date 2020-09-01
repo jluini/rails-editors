@@ -1,24 +1,20 @@
-# README
+# rails-editors
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación permite testear editores de texto en rails.
 
-Things you may want to cover:
+## Setup:
 
-* Ruby version
+- `bundle install`
+- `yarn install --check-files`
+- `cp config/database.yml.default config/database.yml`
+- editar el nombre/username/password de las bases de datos en `config/database.yml`
+- `rails db:create`
+- `rails db:migrate`
+- `rails server`
 
-* System dependencies
+## Probar templates de GrapesJS
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- En la sección **GrapesJS** de la home cliquear *Nuevo documento* (esto crea y persiste un documento en blanco y permite editarlo)
+- En la parte inferior se puede importar un template como html; se incluye uno en `templates/mail_invitacion.html`
+- Una vez importado debería visualizarse correctamente; cliquear *Guardar*
+- Luego se lo puede editar y/o clonar
