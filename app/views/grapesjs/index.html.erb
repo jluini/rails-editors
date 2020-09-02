@@ -4,6 +4,7 @@
   <tr>
     <th>Id</th>
     <th>Editar</th>
+    <th>Editar2</th>
     <th>Clonar</th>
     <th>Eliminar</th>
   </tr>
@@ -11,6 +12,7 @@
     <tr>
       <td><%= document.id %></td>
       <td><%= link_to 'Editar', edit_document_path(document) %></td>
+      <td><%= link_to 'Editar2', edit_document2_path(document) %></td>
       <td><%= link_to 'Clonar', clone_document_path(document) %></td>
       <td><%= link_to 'Eliminar', destroy_document_path(document), method: :delete, data: { confirm: '¿Estás seguro/a?' } %></td>
     </tr>

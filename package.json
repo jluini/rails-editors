@@ -11,6 +11,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^5.2.1",
     "grapesjs": "^0.16.18",
+    "grapesjs-preset-newsletter": "^0.2.20",
     "tiptap": "^1.29.6",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.12"

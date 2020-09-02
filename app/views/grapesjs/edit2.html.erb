@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'grapesjs-texteditor', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<ul>
+  <li><%= link_to '<-- Volver al listado', documents_path %></li>
+  <li><%= link_to 'Clonar', clone_document_path(@document) %></li>
+  <li><%= link_to 'Eliminar', destroy_document_path(@document), method: :delete, data: { confirm: '¿Estás seguro/a?' } %></li>
+</ul>
+
+<h1>Editar documento<span style="color: blue;">#<%= @document.id %></span></h1>
+
+<div class="editor-container">
+  <div id="gjs">
+    <h1>Cargando...</h1>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'grapesjs/texteditor' %>

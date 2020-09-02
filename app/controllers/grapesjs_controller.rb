@@ -55,6 +55,10 @@ class GrapesjsController < ApplicationController
     @document = Document.find(params[:id])
   end
   
+  def edit2
+    @document = Document.find(params[:id])
+  end
+  
   def destroy
     @node = Document.find(params[:id])
     @node.destroy
