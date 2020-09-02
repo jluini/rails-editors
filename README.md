@@ -15,6 +15,6 @@ Esta aplicación permite testear editores de texto en rails.
 ## Probar templates de GrapesJS
 
 - En la sección **GrapesJS** de la home cliquear *Nuevo documento* (esto crea y persiste un documento en blanco y permite editarlo)
-- En la parte inferior se puede importar un template como html; se incluye uno en `templates/mail_invitacion.html`
+- En la parte inferior se puede importar un template como html (incluir sólo el contenido del `<body>`); se incluye uno en `templates/mail_invitacion/content.html`
 - Una vez importado debería visualizarse correctamente; cliquear *Guardar*
 - Luego se lo puede editar y/o clonar

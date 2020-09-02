@@ -43,6 +43,11 @@ class GrapesjsController < ApplicationController
     create_new_document nil
   end
   
+  def show
+    @document = Document.find(params[:id])
+    render layout: false
+  end
+  
   def clone
     @document = Document.find(params[:id])
     
