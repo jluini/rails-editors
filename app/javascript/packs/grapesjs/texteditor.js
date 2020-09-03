@@ -17,8 +17,15 @@ const editor = grapesjs.init({
   plugins: ['gjs-preset-newsletter'],
   pluginsOpts: {
     'gjs-preset-newsletter': {
+      cmdBtnDesktopLabel: 'Escritorio',
+      cmdBtnTabletLabel: 'Tablet',
+      cmdBtnMobileLabel: 'Celular',
+      
+      // swichtVwBtnTitle: 'Delinear componentes', // does not work
+      // fullScrBtnTitle: 'Pantalla completa', // does not work
+      // expTplBtnTitle: 'Exportar html', // does not work
+      modalTitleExport: 'Exportar html',
       modalTitleImport: 'Importar html',
-      // ... other options
     }
   }
 });
@@ -42,3 +49,10 @@ editor.on('storage:error', (err) => {
   alert(`No se pudo guardar. El error es:\n\n${err}`);
 });
 
+// Change import button icon
+const importButton = editor.Panels.getButton('options', 'gjs-open-import-template');
+importButton.set('className', 'fa fa-upload');
+
+// Remove toggle-images button
+const toggleImagesButton = editor.Panels.getButton('options', 'gjs-toggle-images');
+editor.Panels.getPanel('options').get('buttons').remove(toggleImagesButton);
