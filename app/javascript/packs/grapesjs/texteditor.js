@@ -22,3 +22,23 @@ const editor = grapesjs.init({
     }
   }
 });
+
+// Add save button
+editor.Panels.addButton('options', {
+  id: 'save',
+  className: 'fa fa-save',
+  command(editor) {
+    editor.store(res => {
+      if(typeof(res) == 'object' && res.data && res.data == 'ok') {
+        alert('¡Guardado!');
+      } else {
+        alert('No se pudo guardar :(');
+      }
+    });
+  },
+  attributes: { title: 'Guardar' }
+});
+editor.on('storage:error', (err) => {
+  alert(`No se pudo guardar. El error es:\n\n${err}`);
+});
+
