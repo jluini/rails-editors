@@ -36,7 +36,7 @@ class GrapesjsController < ApplicationController
   end
   
   def index
-    @documents = Document.all
+    @documents = Document.all.order(:id)
   end
   
   def new
