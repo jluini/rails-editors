@@ -12,7 +12,7 @@
   <% @documents.each do |document| %>
     <tr>
       <td><%= document.id %></td>
-      <td><%= link_to 'Ver', document_path(document) %></td>
+      <td><%= link_to 'Ver', document_path(document), 'data-turbolinks': false %></td>
       <td><%= link_to 'Editar', edit_document_path(document) %></td>
       <td><%= link_to 'Editar2', edit_document2_path(document) %></td>
       <td><%= link_to 'Clonar', clone_document_path(document) %></td>
