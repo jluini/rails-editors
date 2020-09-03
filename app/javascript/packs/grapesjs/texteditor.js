@@ -30,6 +30,20 @@ const editor = grapesjs.init({
   }
 });
 
+// Add undo/redo buttons
+editor.Panels.addButton('options', {
+  id: 'undo',
+  className: 'fa fa-undo',
+  command: 'undo',
+  attributes: { title: 'Deshacer' }
+});
+editor.Panels.addButton('options', {
+  id: 'redo',
+  className: 'fa fa-repeat',
+  command: 'redo',
+  attributes: { title: 'Rehacer' }
+});
+
 // Add save button
 editor.Panels.addButton('options', {
   id: 'save',
